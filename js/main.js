@@ -20,6 +20,6 @@ function loadScreen(screen, callback) {
 
 setTimeout(() => {
   document.body.style.backgroundColor = '#fff';
-  loadScreen('onboarding1')
-}, 3000);
+  loadScreen('onboarding')
+}, 0);
 
