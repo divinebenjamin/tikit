@@ -1,0 +1,47 @@
+
+/* WRAPPER ANIMATION */
+.splash__wrapper{
+  height: 100%;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+
+.splash__wrapper.fadeOut{
+  opacity: 0;
+  transition: ease-in-out .3s;
+}
+
+
+/* LOGO ANIMATION */
+.splash__logo{
+  width: 25%;
+  transform: translateY(600px);
+  opacity: 0;
+}
+
+.splash__logo.moveIn{
+  transform: translateY(-5vh);
+  opacity: 1;
+  transition: ease-in-out .5s;
+}
+
+
+/* TEXT ANIMATION */
+.splash__text{
+  position: absolute;
+  bottom: calc(var(--vh, 1vh) * 8);
+  font-family: var(--font-primary);
+  opacity: 0;
+}
+
+.splash__text.fadeIn{
+  opacity: 1;
+  transition: ease-in-out .5s;
+}
+
+

@@ -4,14 +4,35 @@
 
 
 
-/* RESETS & DEFAULTS */
+/* RESETS */
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
 
 *{
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+ul,
+ol{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+image{
+  display: box;
+  max-width: 100%;
+}
+
+
+/* DEFAULTS */
 :root{
   /* COLOR VARIABLES */
   --color-primary: #16F98A;
@@ -19,15 +40,34 @@
   --color-secondary-dark: #05220B;
   --color-surface-1dp: #BFD2C8;
   --color-surface-2dp: #8EB0A0;
+  --color-light: #FFFFFF;
+  --color-dark: #040405;
   --color-background-primary: #E1EAE6;
-  --color-background-light: #FFFFFF;
-  --color-backgrounf-dark: #040405;
   --color-gradient: linear-gradient(135deg,#05220b 0%, #134338 37%, #16f98a 100%);
 
   /* FONT VARIABLES */
   --font-primary: "Space Grotesk", sans-serif;
   --font-secondary: "Noto Sans", sans-serif;
 }
+
+html{
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body{
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: var(--color-dark);
+  overflow: hidden;
+  font-family: var(--font-secondary);
+}
+
+#app{
+  height: 100%;
+  width: 100%;
+}
+
 
 
 /* COMPONENTS STYLING */
