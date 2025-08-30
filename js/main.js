@@ -21,5 +21,5 @@ function loadScreen(screen, callback) {
 setTimeout(() => {
   document.body.style.backgroundColor = '#fff';
   loadScreen('onboarding')
-}, 0);
+}, 3000);
 
