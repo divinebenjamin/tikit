@@ -1,5 +1,22 @@
 
-.onboard1{
+/* COMPONENTS STYLING */
+.onboard__wrapper .onboard__button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; height: 40px;
+}
+
+.onboard__wrapper .onboard__button i{
+  color: var(--color-light-grey);
+  font-size: 32px;
+}
+
+
+/* SYLING FROM MOBILE 360px */
+
+/* DEFAULT ONBOARD SCREEN STYLING */
+.onboard__wrapper{
   width: 100%; height: 100%;
   display: flex;
   flex-direction: column;
@@ -7,71 +24,85 @@
   position: relative;
 }
 
-
-.onboard1 .back__button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.onboard__wrapper .back__button{
   position: absolute;
-  top: 5px; left: -15px;
-  width: 40px; height: 40px;
+  top: 0px; left: -12px;
 }
 
-
-.onboard1 i{
-  color: var(--color-dark);
-  font-size: 24px;
-}
-
-
-.content__wrapper{
+.onboard__wrapper .content__wrapper{
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
-  gap: 40px;
+  gap: 16px;
+  margin-top: 40px;
 }
 
-.content__wrapper .image{
+.onboard__wrapper .content__wrapper .image{
   width: 100%;
 }
 
-
-.content__wrapper .text__wrapper{
+.onboard__wrapper .content__wrapper .text__wrapper{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 20px;
+  gap: 8px;
 }
 
-.text__wrapper h2{
+.onboard__wrapper .text__wrapper h2{
   font-family: var(--font-primary);
   font-size: var(--font-size-h2);
   width: 80%;
 }
-.text__wrapper p{
+
+.onboard__wrapper .text__wrapper p{
   color: var(--color-light-grey);
   width: 90%;
 }
 
-
-.pagination{
+.onboard__wrapper .pagination{
   display: flex;
   gap: 5px;
   justify-content: center;
 }
-
-.box{
+.onboard__wrapper .box{
   background-color: var(--color-light-grey);
   width: 10px; height: 7px;
-  border-radius: 5px;
-  
+  border-radius: 5px; 
 }
-.box.active{
+
+.onboard__wrapper .box.active{
   width: 30px;
   background-color: var(--color-dark);
+}
+
+.onboard__wrapper .nav__button{
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.onboard__wrapper .nav__button .next__button{
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  border-radius: 8px;
+  box-shadow: 2px 2px var(--color-primary);
+}
+
+.onboard__wrapper .next__button i{
+  color: var(--color-light);
+}
+
+.onboard__wrapper .nav__button .edge__bottom{
+  width: 170px; height: 150px;
+  position: absolute;
+  bottom: -30px; right: -30px;
+  background-color: var(--color-secondary-light);
+  border-radius: 100% 0 0;
+  z-index: -1;
 }
 

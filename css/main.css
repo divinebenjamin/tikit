@@ -31,12 +31,19 @@ image{
   max-width: 100%;
 }
 
+button{
+  border: none;
+  outline: none;
+  background: none;
+}
+
 
 /* DEFAULTS */
 :root{
   /* COLOR VARIABLES */
   --color-primary: #16F98A;
-  --color-secondary-light: #134338;
+  --color-secondary-light: #115A36;
+  --color-secondary-mid: #134338;
   --color-secondary-dark: #05220B;
   --color-surface-1dp: #BFD2C8;
   --color-surface-2dp: #8EB0A0;
