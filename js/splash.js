@@ -1,11 +1,8 @@
 
-// VARIABLES ASSIGNMENT
+// SPLASH SCREEN VARIABLES ASSIGNMENT
 let wrapper = document.querySelector('.splash__wrapper');
 let logo = document.querySelector('.splash__logo');
 let text = document.querySelector('.splash__text');
-
-// BACKGROUND COLOR
-document.body.style.backgroundColor = '#040405';
 
 // ANIMATION TIME ORDER
 setTimeout(() => {
@@ -20,3 +17,7 @@ setTimeout(() => {
   wrapper.classList.add('fadeOut')
 }, 2700)
 
+// OPEN ONBOARD SCREEN
+setTimeout(() => {
+  window.location.assign('onboard/onboarding.html');
+}, 3000);
