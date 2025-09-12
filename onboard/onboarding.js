@@ -32,7 +32,7 @@ const footerNav1 = `
 
 const footerNav2 = `
 <button class="next__button">
-  Get started
+Get started
 </button>`;
 
 let currIndex = 0;
@@ -43,12 +43,41 @@ const titleEl = document.getElementById('onboardTitle');
 const descEl = document.getElementById('onboardDesc');
 const footerEl = document.getElementById('onboardFooter');
 
+// Ppagination
 const boxes = document.querySelectorAll('.box');
+
+
+function renderBoard(index, footer){
+  imgEl.src = onboardData[index].img;
+  titleEl.textContent = onboardData[index].title;
+  descEl.textContent = onboardData[index].desc;
+  footerEl.innerHTML = footer;
+}
+
+renderBoard(currIndex, footerNav1);
+
+// Next Button
+const nextBtn = document.querySelector('.next__button');
+
+nextBtn.addEventListener('click', () => {
+  nextBoard()
+});
+
+function nextBoard(){
+  if(currIndex == 0){
+    currIndex++
+    renderBoard(currIndex, footerNav1)
+  } else if(currIndex == 1){
+    currIndex++
+    renderBoard(currIndex, footerNav2)
+  }
+}
+
+
+
+// Skip from board to auth page
 const skipBtn = document.querySelector('.skip__button');
-const nextBtn = document.querySelector('next__button');
 
-
-imgEl.src = onboardData[currIndex].img;
-titleEl.textContent = onboardData[currIndex].title;
-descEl.textContent = onboardData[currIndex].desc;
-footerEl.innerHTML = footerNav1;
+skipBtn.addEventListener('click', () => {
+  window.location.assign('../screens/auth.html');
+});

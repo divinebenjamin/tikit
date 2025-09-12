@@ -3,23 +3,6 @@
   background-color: var(--color-light);
 }
 
-.onboard__wrapper .pagination{
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-}
-
-.onboard__wrapper .box{
-  background-color: var(--color-light-grey);
-  width: 10px; height: 7px;
-  border-radius: 5px; 
-}
-
-.onboard__wrapper .box.active{
-  width: 30px;
-  background-color: var(--color-dark);
-}
-
 /* MAIN */
 
 .onboard__wrapper{
@@ -61,3 +44,58 @@
   width: 100%;
 }
 
+.onboard__wrapper .pagination{
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.pagination .box{
+  background-color: var(--color-light-grey);
+  width: 10px; height: 7px;
+  border-radius: 5px; 
+}
+
+.pagination .box.active{
+  width: 30px;
+  background-color: var(--color-dark);
+}
+
+.onboard__wrapper .footer__nav{
+  width: 100%; height: calc(var(--vh, 1vh) * 15);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.footer__nav .onboard__button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; height: 40px;
+  font-size: var(--font-size-h2);
+  
+}
+
+.footer__nav .skip__button{
+  color: var(--color-light-grey);
+}
+
+.footer__nav .next__button{
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  border-radius: 8px;
+  box-shadow: 1px 1px var(--color-primary);
+}
+
+.footer__nav .edge__design{
+  position: absolute;
+  bottom: -30px; right: -30px;
+  background-color: var(--color-secondary-light);
+  width: calc(var(--vh, 1vh) * 25); height: calc(var(--vh, 1vh) * 22);
+  border-radius: 100% 0 0;
+  z-index: -1;
+}
