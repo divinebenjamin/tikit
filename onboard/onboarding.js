@@ -19,50 +19,61 @@ const onboardData = [
 ];
 
 const footerNav1 = `
-<button class="skip__button onboard__button">
+<button class="skip__button onboard__button" onclick="skipBoard()">
   <i class="uil uil-angle-double-right"></i>
 </button>
 
-<button class="next__button onboard__button">
+<button class="next__button onboard__button" onclick="nextBoard()">
   <i class="uil uil-angle-right"></i>
 </button>
   
 <div class="edge__design"></div>`;
 
-
 const footerNav2 = `
-<button class="next__button">
+<button class="next__button cta__button" onclick="nextBoard()">
 Get started
 </button>`;
 
-let currIndex = 0;
 
 // Elements
+const backBtn = document.getElementById('onboardBack');
 const imgEl = document.getElementById('onboardImg');
 const titleEl = document.getElementById('onboardTitle');
 const descEl = document.getElementById('onboardDesc');
 const footerEl = document.getElementById('onboardFooter');
-
-// Ppagination
 const boxes = document.querySelectorAll('.box');
 
+// current screen indicator
+let currIndex = 0;
 
 function renderBoard(index, footer){
   imgEl.src = onboardData[index].img;
   titleEl.textContent = onboardData[index].title;
   descEl.textContent = onboardData[index].desc;
   footerEl.innerHTML = footer;
+
+  if(currIndex != 0){
+    backBtn.classList.add('active');
+  }
+
+  pagination();
 }
 
 renderBoard(currIndex, footerNav1);
 
-// Next Button
-const nextBtn = document.querySelector('.next__button');
+// Back Function
+function backBoard(){
+  if(currIndex == 1){
+    currIndex--
+    renderBoard(currIndex, footerNav1)
+    backBtn.classList.remove('active');
+  } else if(currIndex == 2){
+    currIndex--
+    renderBoard(currIndex, footerNav1)
+  }
+}
 
-nextBtn.addEventListener('click', () => {
-  nextBoard()
-});
-
+// Next Function
 function nextBoard(){
   if(currIndex == 0){
     currIndex++
@@ -70,14 +81,23 @@ function nextBoard(){
   } else if(currIndex == 1){
     currIndex++
     renderBoard(currIndex, footerNav2)
+  } else if(currIndex == 2){
+    window.location.assign('../screens/auth.html');
   }
 }
 
-
-
-// Skip from board to auth page
-const skipBtn = document.querySelector('.skip__button');
-
-skipBtn.addEventListener('click', () => {
+// Skip Function
+function skipBoard(){
   window.location.assign('../screens/auth.html');
-});
+}
+
+// Pagination
+function pagination(){
+  boxes.forEach((box, index) => {
+    if(index == currIndex){
+      box.classList.add('active');
+    } else {
+      box.classList.remove('active');
+    } 
+  });
+}
