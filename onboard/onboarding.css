@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px; height: 40px;
+  width: 32px; height: 32px;
   font-size: var(--font-size-h2);
 }
 
@@ -24,7 +24,7 @@
 .onboard__wrapper .back__button{
   display: none;
   position: absolute;
-  left: -16px; top: -12px;
+  left: -8px; top: -6px;
 }
 
 .onboard__wrapper .back__button.active{
@@ -32,7 +32,7 @@
 }
 
 .onboard__wrapper .content__wrapper{ 
-  width: 100%; max-height: 70%;
+  width: 100%; max-height: 80%;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -42,7 +42,7 @@
 }
 
 .content__wrapper .image{
-  width: 80%;
+  width: 70%;
 }
 
 .content__wrapper .text__wrapper{
@@ -55,7 +55,7 @@
 .text__wrapper h2{
   font-family: var(--font-primary);
   font-size: var(--font-size-h2);
-  width: 90%;
+  width: 100%;
 }
 
 .text__wrapper p{
@@ -88,6 +88,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  padding: 5px 15px;
   z-index: 1;
 }
 
@@ -112,9 +113,70 @@
 
 .footer__nav .edge__design{
   position: absolute;
-  bottom: -30px; right: -30px;
+  bottom: -20px; right: -20px;
   background-color: var(--color-secondary-light);
   width: calc(var(--vh, 1vh) * 25); height: calc(var(--vh, 1vh) * 22);
   border-radius: 100% 0 0;
   z-index: -1;
+}
+
+
+
+@media screen and (min-width: 360px){
+
+  .onboard__wrapper .onboard__button{
+    width: 40px; height: 40px;
+  }
+
+  .content__wrapper .image{
+    width: 90%;
+  }
+
+  .footer__nav .next__button{
+    box-shadow: 2px 2px var(--color-primary);
+  }
+
+}
+
+
+
+@media screen and (min-width: 375px){
+
+  .onboard__wrapper .onboard__button{
+    width: 48px; height: 48px;
+  }
+  
+  .onboard__wrapper .back__button{
+    left: -16px; top: -12px;
+  }
+
+  .onboard__wrapper .content__wrapper{ 
+    width: 100%; max-height: 90%;
+  }
+
+  .content__wrapper .image{
+    max-width: 100%;
+  }
+  
+  .text__wrapper h2{
+    width: 80%;
+  }
+
+  .onboard__wrapper .footer__nav{
+    width: 100%; height: calc(var(--vh, 1vh) * 10);
+    padding: 0;
+  }
+
+  .footer__nav .edge__design{
+    bottom: -30px; right: -30px;
+    width: calc(var(--vh, 1vh) * 24); height: calc(var(--vh, 1vh) * 21);
+  }
+
+}
+
+@media screen and (min-width: 390px){
+
+  .text__wrapper h2{
+    width: 70%;
+  }
 }
