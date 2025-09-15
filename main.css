@@ -37,6 +37,10 @@ button{
   background: none;
 }
 
+h2{
+  line-height: 1.1;
+}
+
 
 /* DEFAULTS */
 :root{

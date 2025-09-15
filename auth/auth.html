@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tikit - Simple. Fun. Yours</title>
+
+  <!-- ICON IMPORTS -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
+
+  <!-- CSS IMPORTS -->
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="auth.css">
+  
+  <!-- JS IMPORTS -->
+  <script src="../main.js" defer></script>
+  <script src="auth.js" defer></script>
+
+</head>
+<body>
+  <main id="app">
+    <div class="auth__wrapper">
+
+      <!-- Back Button -->
+      <button id="onboardBack" class="back__button auth__button">
+        <i class="uil uil-angle-left"></i>
+      </button>
+
+      <!-- Form Title -->
+      <div class="heading__wrapper">
+        <h2 id="authTitle">Create an <br> account</h2>
+        <p id="authDesc">Simple. Fun. Yours. Ready to begin?</p>
+      </div>
+
+      <form action="#" class="auth__form">
+        <div class="input__wrapper">
+          <div class="input__box">
+            <input id="authName" type="text" placeholder="" required>
+            <label for="authName">Name</label>
+          </div>
+          
+          <div class="input__box">
+            <input id="authMail" type="email" placeholder="" required>
+            <label for="authMail">Email</label>
+          </div>
+
+          <div class="input__box">
+            <input id="authPass" type="password" placeholder="" required>
+            <label for="authPass">Password</label>
+          </div>
+        </div>
+
+        <!-- Form Consent -->
+        <div class="auth__consent">
+          <input id="authConsent" type="checkbox">
+          <p>I agree to the 
+          <a href="#"> Terms and Privacy policy</a>
+          </p>
+        </div>
+        
+        
+        <!-- Form Button -->
+        <button class="form__button" type="submit">
+          Create account
+        </button>
+        
+        <!-- Login or Register Option -->
+        <div class="auth__option">
+          <p>Already have an account? <span>Log in</span></p>
+        </div>
+      </form>
+    </div>
+  </main>
+  
+</body>
+</html>

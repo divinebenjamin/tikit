@@ -82,13 +82,13 @@ function nextBoard(){
     currIndex++
     renderBoard(currIndex, footerNav2)
   } else if(currIndex == 2){
-    window.location.assign('../screens/auth.html');
+    window.location.assign('../auth/auth.html');
   }
 }
 
 // Skip Function
 function skipBoard(){
-  window.location.assign('../screens/auth.html');
+  window.location.assign('../auth/auth.html');
 }
 
 // Pagination
