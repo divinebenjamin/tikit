@@ -28,46 +28,26 @@
 
       <!-- Form Title -->
       <div class="heading__wrapper">
-        <h2 id="authTitle">Create an <br> account</h2>
-        <p id="authDesc">Simple. Fun. Yours. Ready to begin?</p>
+        <h2 id="authTitle"></h2>
+        <p id="authDesc"></p>
       </div>
 
       <form action="#" class="auth__form">
-        <div class="input__wrapper">
-          <div class="input__box">
-            <input id="authName" type="text" placeholder="" required>
-            <label for="authName">Name</label>
-          </div>
-          
-          <div class="input__box">
-            <input id="authMail" type="email" placeholder="" required>
-            <label for="authMail">Email</label>
-          </div>
-
-          <div class="input__box">
-            <input id="authPass" type="password" placeholder="" required>
-            <label for="authPass">Password</label>
-          </div>
-        </div>
+        <div id="authInput" class="input__wrapper"></div>
 
         <!-- Form Consent -->
         <div class="auth__consent">
-          <input id="authConsent" type="checkbox">
-          <p>I agree to the 
-          <a href="#"> Terms and Privacy policy</a>
-          </p>
+          <input id="authConsentBox" type="checkbox">
+          <span class="custom__checkbox"></span>
+          <p id="authConsentText"></p>
         </div>
         
         
         <!-- Form Button -->
-        <button class="form__button" type="submit">
-          Create account
-        </button>
+        <button id="authSubmit" class="form__button" type="submit"></button>
         
         <!-- Login or Register Option -->
-        <div class="auth__option">
-          <p>Already have an account? <span>Log in</span></p>
-        </div>
+        <div id="authOption" class="auth__option"></div>
       </form>
     </div>
   </main>
