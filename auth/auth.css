@@ -19,7 +19,7 @@ input[type="checkbox"] {
 
 .custom__checkbox{
   display: inline-block;
-  width: var(--font-size-s); height: var(--font-size-s);
+  width: var(--font-size-p); height: var(--font-size-p);
   border: 1px solid var(--color-secondary-mid);
   border-radius: 2px;
   margin-right: 8px;
@@ -38,7 +38,6 @@ input[type="checkbox"]:checked + .custom__checkbox{
   width: 100%; height: 100%;
   display: flex;
   flex-direction: column;
-  gap: calc(var(--vh, 1vh) * 6);
   position: relative;
 }
 
@@ -48,10 +47,10 @@ input[type="checkbox"]:checked + .custom__checkbox{
 }
 
 .auth__wrapper .heading__wrapper{
-  margin-top: calc(var(--vh, 1vh) * 10);
+  margin: 20% 0 10%;
   display: flex;
   flex-direction: column;
-  gap: calc(var(--vh, 1vh) * 1.5);
+  gap: 8px;
 }
 
 .heading__wrapper h2{
@@ -67,12 +66,12 @@ input[type="checkbox"]:checked + .custom__checkbox{
 .auth__form .input__wrapper{
   display: flex;
   flex-direction: column;
-  gap: calc(var(--vh, 1vh) * 1.5);
-  margin-bottom: calc(var(--vh, 1vh) * 3);
+  gap: 16px;
+  margin-bottom: 8px;
 }
 
 .auth__form .input__box{
-  width: 100%; height: 40px;
+  width: 100%; height: 30px;
   position: relative;
 }
 
@@ -116,11 +115,17 @@ input[type="checkbox"]:checked + .custom__checkbox{
   color: var(--color-secondary-mid);
 }
 
+.form__footer{
+  position: absolute;
+  width: 100%;
+  bottom: 8px; left: 50%;
+  transform: translateX(-50%);
+}
+
 .form__button{
   font-size: var(--font-size-p);
   padding: 12px 24px;
-  margin-top: 8%;
-  margin-bottom: 3%;
+  margin-bottom: 8px;
   display: flex;
   justify-self: center;
   background-color: var(--color-dark);
@@ -132,6 +137,47 @@ input[type="checkbox"]:checked + .custom__checkbox{
 .auth__option{
   font-size: var(--font-size-s);
   justify-self: center;
+} 
+
+.auth__option span{
+  text-decoration: underline;
+  color: var(--color-secondary-mid);
+} 
+
+
+ @media screen and (min-width: 360px){
+  .auth__wrapper .auth__button{
+    width: 40px; height: 40px;
+  }
+
+  .auth__wrapper .heading__wrapper{
+    margin: 30% 0 15%;
+  }
+
+  .auth__form .input__wrapper{
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+
+  .auth__form .input__box{
+    height: 40px;
+    position: relative;
+  }
+
+  .form__footer{
+    bottom: 16px;
+  }
+
+  .form__button{
+    padding: 16px 28px;
+    margin-bottom: 16px;
+    box-shadow: 2px 2px var(--color-primary);
+  }
 }
 
+@media screen and (min-width: 375px){
+  .auth__wrapper .back__button{
+    left: -16px; top: -12px;
+  }
+}
 
