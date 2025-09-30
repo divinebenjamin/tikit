@@ -104,15 +104,11 @@ input[type="checkbox"]:checked + .custom__checkbox{
   opacity: 1;
 }
 
-.auth__consent{
+.auth__hint{
   font-size: var(--font-size-s);
+  color: var(--color-warning);
   display: flex;
   align-items: center;
-}
-
-.auth__consent a{
-  text-decoration: underline;
-  color: var(--color-secondary-mid);
 }
 
 .form__footer{

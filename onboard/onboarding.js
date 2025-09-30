@@ -34,6 +34,13 @@ const footerNav2 = `
 Get started
 </button>`;
 
+const user = JSON.parse(localStorage.getItem("user")) ?? {
+  name: null,
+  email: null,
+  password: null,
+  remember: false,
+  registered: false
+};
 
 // Elements
 const backBtn = document.getElementById('onboardBack');
@@ -82,7 +89,11 @@ function nextBoard(){
     currIndex++
     renderBoard(currIndex, footerNav2)
   } else if(currIndex == 2){
-    window.location.assign('../auth/auth.html');
+    if(user.remember){
+      window.location.assign('../auth/auth.html');
+    } else {
+      window.location.assign('../app/app.html');
+    }
   }
 }
 
