@@ -111,6 +111,11 @@ input[type="checkbox"]:checked + .custom__checkbox{
   align-items: center;
 }
 
+.hint__text{
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
 .form__footer{
   position: absolute;
   width: 100%;
