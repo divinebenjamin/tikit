@@ -129,7 +129,7 @@ function handleSignup(){
   user.logged = true;
 
   saveUser(user);
-  window.location.assign('../screens/space.html');
+  window.location.assign('../app/app.html');
 }
 
 // Login Handling
@@ -150,7 +150,7 @@ function handleLogin(){
   user.logged = true;
 
   saveUser(user);
-  window.location.assign('../screens/space.html');
+  window.location.assign('../app/app.html');
 }
 
 // login or signuo option toggle

@@ -42,7 +42,7 @@ setTimeout(() => {
 // OPEN ONBOARD / SPACE SCREEN
 setTimeout(() => {
   if(user.registered && user.logged){
-    window.location.assign('screens/space.html');
+    window.location.assign('app/app.html');
   } else if(user.registered){
     window.location.assign('auth/auth.html');
   } else {
