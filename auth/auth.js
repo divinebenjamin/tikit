@@ -46,7 +46,9 @@ const defaultUser = {
   email: null,
   password: null,
   registered: false,
-  logged: false
+  logged: false,
+  task: 0,
+  xp: 0
 };
 
 function getUser(){
@@ -163,7 +165,7 @@ function authOption(index){
     renderAuth(currIndex);
   }
 }
-
+  
 // show Hint function
 function showHint(message, duration = 3000){
   hintEl.textContent = message;

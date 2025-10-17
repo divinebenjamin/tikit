@@ -3,7 +3,7 @@
 const onboardData = [
   {
     img: '../assets/images/onboard1.svg',
-    title: 'Create Your Space',
+    title: 'Create Your Task',
     desc: 'Create personalized workspaces to stay focused on what matters most.'
   },
   {

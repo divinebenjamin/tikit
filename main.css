@@ -88,6 +88,15 @@ body{
   color: var(--color-dark);
 }
 
+*::-webkit-scrollbar{
+  display: none;
+}
+
+.hide__scrollbar{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 #app{
   height: 100%;
   width: 100%;

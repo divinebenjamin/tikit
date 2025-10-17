@@ -10,8 +10,10 @@ const defaultUser = {
   email: null,
   password: null,
   registered: false,
-  logged: false
-};
+  logged: false,
+  task: 0,
+  xp: 0
+};  
 
 // Helper Function
 function getUser(){
