@@ -4,7 +4,7 @@
 
 
 /* MAIN */
-.task__wrapper{
+.task__wrapper--list{
   display: grid;
   grid-template-rows: 6% 18% auto 50px;
   grid-gap: 1.5rem;
@@ -136,7 +136,7 @@ input[type="checkbox"]:checked ~ p{
   align-items: center;
 }
 
-.app__nav{
+.add__nav{
   height: 40px; width: auto;
   display: flex;
   justify-content: center;

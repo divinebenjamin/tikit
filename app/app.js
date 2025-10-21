@@ -32,6 +32,9 @@ const appEl = document.getElementById('app');
 const titleEl = document.getElementById('headerTitle');
 const taskEl = document.getElementById('headerTask');
 const listEl = document.getElementById('listWrapper');
+const taskListEl = document.getElementById('taskWrapperList');
+const taskAddEl = document.getElementById('taskWrapperAdd');
+const taskAddBtn = document.getElementById('addNavBtn');
 
 const taskList = [
   {taskName: "set up vscode", checked: false},
@@ -45,19 +48,33 @@ const taskList = [
   {taskName: "check competitors", checked: false},
   {taskName: "partner with team leader", checked: false},
   {taskName: "read for 5 mins", checked: false},
-  {taskName: "finish project", checked: false}
+  {taskName: "finish project", checked: true}
 ];
 
-taskList.reverse()
+// REVERSE LIST TO MAKE RECENT TASK STAY AFLOAT
+taskList.reverse();
+
+// DISPLAY THE TASK SCREEN
+renderTask();
 
 
-// RENDER TASK LIST
+taskAddBtn.addEventListener('click', () => {
+  renderAdd()
+});
+
+
+
+
+// RENDER THE ENTIRE TASK SCREEN
 function renderTask(){
+  taskListEl.style.display = 'grid';
+  taskAddEl.style.display = 'none';
   titleEl.textContent = `hi, ${user.name ?? 'Guest'}`;
   taskEl.textContent = `${user.task ?? 0} task completed`;
   listEl.innerHTML = renderList();
 }
 
+// UPDATE THE HEADER TASK VALUE
 function updateTask(){
   taskEl.textContent = `${user.task ?? 0} task completed`;
 }
@@ -98,9 +115,6 @@ function removeTask(index){
 
 // CHECK TASK AND INCREASE PROGRESS
 function taskProgressUpdate(index){
-  const checkEl = document.getElementById("checkTask");
-  console.log(taskList[index]['checked']) 
-
   if (!taskList[index]['checked']){
     user.task += 1;
     taskList[index]['checked'] = true
@@ -115,9 +129,12 @@ function taskProgressUpdate(index){
 
 }
 
+// RENDER THE ENTIRE TASK ADD SCREEN
+function renderAdd(){
+  taskListEl.style.display = 'none';
+  taskAddEl.style.display = 'flex';
+}
 
-
-renderTask();
 
   
 
