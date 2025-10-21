@@ -6,8 +6,8 @@ const defaultUser = {
   password: null,
   registered: false,
   logged: false,
-  task: 0,
-  xp: 0
+  task: null,
+  xp: null
 };
 
 function getUser(){
@@ -29,20 +29,23 @@ function saveUser(user){
 
 // ELEMENTS
 const appEl = document.getElementById('app');
+const titleEl = document.getElementById('headerTitle');
+const taskEl = document.getElementById('headerTask');
+const listEl = document.getElementById('listWrapper');
 
 const taskList = [
-  {taskName: "set up vscode"},
-  {taskName: "push to git"},
-  {taskName: "do choir"},
-  {taskName: "finish homework"},
-  {taskName: "check volume"},
-  {taskName: "organize business"},
-  {taskName: "brief team members"},
-  {taskName: "run ads"},
-  {taskName: "check competitors"},
-  {taskName: "partner with team leader"},
-  {taskName: "read for 5 mins"},
-  {taskName: "finish project"}
+  {taskName: "set up vscode", checked: false},
+  {taskName: "push to git", checked: false},
+  {taskName: "do choir", checked: false},
+  {taskName: "finish homework", checked: false},
+  {taskName: "check volume", checked: false},
+  {taskName: "organize business", checked: false},
+  {taskName: "brief team members", checked: false},
+  {taskName: "run ads", checked: false},
+  {taskName: "check competitors", checked: false},
+  {taskName: "partner with team leader", checked: false},
+  {taskName: "read for 5 mins", checked: false},
+  {taskName: "finish project", checked: false}
 ];
 
 taskList.reverse()
@@ -50,51 +53,13 @@ taskList.reverse()
 
 // RENDER TASK LIST
 function renderTask(){
-  appEl.innerHTML = `
-    <section id="taskWrapper" class="task__wrapper">
-      <header class="task__header">
-        <div class="header__text">
-          <h5>hi, ${user.name || 'Guest'}</h5>
-          <p>${user.task|| 0} task completed</p>
-        </div>
-        
-        <div class="header__img">
-          <img class="img" src="../assets/images/avatar.svg" alt="User avatar">
-        </div>
-        </header>
+  titleEl.textContent = `hi, ${user.name ?? 'Guest'}`;
+  taskEl.textContent = `${user.task ?? 0} task completed`;
+  listEl.innerHTML = renderList();
+}
 
-      <div class="task__visual">
-      <p class="visual__text">Manage <br> Task</p>
-        <div class="visual__img">
-        <img src="../assets/images/swirl.svg" alt="swirl" class="img">
-        </div>
-        <div class="visual__img">
-          <img src="../assets/images/illustration1.svg" alt="swirl" class="img">
-          </div>
-      </div>
-
-      <div id="listWrapper" class="list__wrapper hide__scrollbar">
-        ${renderList()}
-      </div>
-
-      <div class="app__nav">
-        <div class="icon__wrapper icon">
-          <img class="img" src="../assets/icons/home.svg" alt="task icon" >
-          <p class="icon__label">Task</p>
-        </div>
- 
-        <div class="icon__wrapper add">
-          <img class="img" src="../assets/icons/plus.svg" alt="task icon" >
-        </div>
-        
-        <div class="icon__wrapper icon">
-          <img class="img" src="../assets/icons/menu.svg" alt="task icon" >
-          <p class="icon__label">Menu</p>
-        </div>
-
-      </div>
-
-    </section>`;
+function updateTask(){
+  taskEl.textContent = `${user.task ?? 0} task completed`;
 }
 
 // RENDER LIST OF TASK
@@ -114,7 +79,7 @@ function renderList(){
       ${taskList.map(({taskName}, index) => `
         <div class="task__item">
           <div class="item__label">
-            <input type="checkbox">
+            <input id="checkTask${index}" ${taskList[index]['checked'] ? 'checked' : ''} type="checkbox" onclick="taskProgressUpdate(${index})">
             <span class="custom__checkbox"></span>
             <p>${taskName}</p>
           </div>
@@ -131,12 +96,30 @@ function removeTask(index){
   renderTask();
 }
 
+// CHECK TASK AND INCREASE PROGRESS
+function taskProgressUpdate(index){
+  const checkEl = document.getElementById("checkTask");
+  console.log(taskList[index]['checked']) 
+
+  if (!taskList[index]['checked']){
+    user.task += 1;
+    taskList[index]['checked'] = true
+    updateTask();
+    return user.task;
+  } else {
+    user.task -= 1;
+    taskList[index]['checked'] = false
+    updateTask();
+    return user.task;
+  }
+
+}
+
+
+
 renderTask();
 
-
-
   
-// ADD NEW TASK
 
 
 
