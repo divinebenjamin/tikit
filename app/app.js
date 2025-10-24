@@ -6,7 +6,7 @@ const defaultUser = {
   password: null,
   registered: false,
   logged: false,
-  task: null,
+  task: 1,
   xp: null
 };
 
@@ -55,7 +55,7 @@ const taskList = [
 taskList.reverse();
 
 // DISPLAY THE TASK SCREEN
-renderTask();
+renderAdd();
 
 
 taskAddBtn.addEventListener('click', () => {
@@ -132,7 +132,7 @@ function taskProgressUpdate(index){
 // RENDER THE ENTIRE TASK ADD SCREEN
 function renderAdd(){
   taskListEl.style.display = 'none';
-  taskAddEl.style.display = 'flex';
+  taskAddEl.style.display = 'grid';
 }
 
 

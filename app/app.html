@@ -43,18 +43,35 @@
 
       <div id="listWrapper" class="list__wrapper hide__scrollbar"></div>
 
-      <div id="addNavBtn" class="add__nav">
- 
+      <button id="addNavBtn" class="add__nav">
         <p>add task</p>
         <div class="icon__wrapper add">
           <img class="img" src="../assets/icons/plus.svg" alt="task icon" >
         </div>
-
-      </div>
+      </button>
     </section>
 
+    <!-- FORM -->
     <section id="taskWrapperAdd" class="task__wrapper--add">
-      <h1>Hello add</h1>
+      <button id="addBackBtn" class="back__button">
+        <i class="uil uil-angle-left"></i>
+      </button>
+    
+      <div id="addFormWrapper" class="add__form--wrapper">
+
+        <h5 class="form__title">Add New Task</h5>
+        
+        <form action="#" class="add__form" id="addForm"> 
+          <div class="input__box">
+            <input id="addName" type="text" placeholder="">
+            <label for="addName">Name</label>
+          </div>
+        </form>
+      </div>
+
+      <button id="addNavBtn" class="add__nav">
+        <p>add task</p>
+      </button>
     </section>
   </main>
   

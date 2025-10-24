@@ -9,6 +9,7 @@
   grid-template-rows: 6% 18% auto 50px;
   grid-gap: 1.5rem;
   width: 100%; height: 100%;
+  position: relative;
 }
 
 .task__header{
@@ -38,6 +39,7 @@
 
 .header__img{
   max-width: 50px; max-height: 50px;
+  cursor: pointer;
 }
 
 .task__visual{
@@ -133,7 +135,8 @@ input[type="checkbox"]:checked ~ p{
 .item__delete{
   display: flex;
   justify-content: center;
-  align-items: center;
+  cursor: pointer;
+  align-items: center; 
 }
 
 .add__nav{
@@ -150,6 +153,7 @@ input[type="checkbox"]:checked ~ p{
   border: 1px solid var(--color-secondary-light);
   border-radius: 50px;
   padding: 0 6px 0 12px;
+  cursor: pointer;
 }
 
 .icon__wrapper{
@@ -160,4 +164,78 @@ input[type="checkbox"]:checked ~ p{
   padding: 8px;
   border-radius: 100%;
   background-color: var(--color-secondary-light);
+}
+
+.task__wrapper--add{
+  display: grid;
+  grid-template-rows: 50px auto 50px;
+  grid-gap: 1.5rem;
+  width: 100%; height: 100%;
+  position: relative;
+}
+
+.back__button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px; height: 100%;
+  font-size: var(--font-size-h2);
+  cursor: pointer;
+}
+
+.add__form--wrapper{
+  align-self: center;
+  justify-self: center;
+  width: 100%; height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  text-align: center;
+}
+
+.form__title{
+  font-size: var(--font-size-h5);
+  font-family: var(--font-primary);  
+}
+
+.input__box{
+  width: 100%; height: 30px;
+  position: relative;
+}
+
+.input__box label{
+  position: absolute;
+  color: var(--color-dark-grey);
+  top: 50%; left: 0;
+  transform: translateY(-50%); 
+  transition: opacity .3s ease-in-out;
+  pointer-events: none;
+}
+
+.input__box input{
+  border: none; outline: none;
+  background: none;
+  width: 100%; height: 40px;
+  color: var(--color-dark-grey);
+  border-bottom: 1px solid var(--color-light-grey);
+  font-family: inherit;
+  font-size: inherit; 
+}
+
+.input__box input:valid~label,
+.input__box input:focus~label,
+.input__box input:not(:placeholder-shown)~label{
+  opacity: 0;
+}
+
+.input__box input:placeholder-shown~label{
+  opacity: 1;
+}
+
+.task__wrapper--add .add__nav{
+  border: none;
+  background-color: var(--color-secondary-light);
+  color: white;
+  height: 100%; 
+  padding: 0 28px;
 }
