@@ -35,6 +35,11 @@ const listEl = document.getElementById('listWrapper');
 const taskListEl = document.getElementById('taskWrapperList');
 const taskAddEl = document.getElementById('taskWrapperAdd');
 const taskAddBtn = document.getElementById('addNavBtn');
+const backAddBtn = document.getElementById('addBackBtn');
+const hintEl = document.getElementById('authHint');
+const formEl = document.getElementById('addForm');
+const taskNameEl = document.getElementById('addName');
+
 
 const taskList = [
   {taskName: "set up vscode", checked: false},
@@ -47,22 +52,18 @@ const taskList = [
   {taskName: "run ads", checked: false},
   {taskName: "check competitors", checked: false},
   {taskName: "partner with team leader", checked: false},
-  {taskName: "read for 5 mins", checked: false},
-  {taskName: "finish project", checked: true}
+  {taskName: "jdlfbskabgabfdsbdsabdbhbfhadbsvslckvbsbvdabfbdshbvalsdbkbdsvbasvdbsklvbashd", checked: false},
+  {taskName: "kjsbgjngkldnslf lkfdnm;g sldmv kns nl dsnkvnfmd kv dxnk vszfkv dbzv .knz dvnvlhkxv zfdm ndfx nkz nfv vn n zbnk dvm dknf znjkzv df kndfnxm nkldzfxcm", checked: true}
 ];
 
 // REVERSE LIST TO MAKE RECENT TASK STAY AFLOAT
 taskList.reverse();
 
 // DISPLAY THE TASK SCREEN
-renderAdd();
+renderTask();
 
 
-taskAddBtn.addEventListener('click', () => {
-  renderAdd()
-});
-
-
+taskAddBtn.addEventListener('click', renderAdd);
 
 
 // RENDER THE ENTIRE TASK SCREEN
@@ -135,8 +136,40 @@ function renderAdd(){
   taskAddEl.style.display = 'grid';
 }
 
+// BACK TO TASK FROM TASK
+backAddBtn.addEventListener('click', renderTask);
 
+// FORM TO ADD TASK TO LIST
+formEl.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const taskName = taskNameEl.value.trim();
+  const checked = false;
+
+  if(!taskName){
+    showHint('Name is invalid');
+    return;
+  }
+
+  taskList.reverse();
+  taskList.push({
+    taskName,
+    checked
+  });
   
+  taskNameEl.value = '';  
+  
+  taskList.reverse();
+  renderTask();
+})
 
+// show Hint function
+function showHint(message, duration = 3000){
+  hintEl.textContent = message;
+  hintEl.style.opacity = '1';
 
-
+  setTimeout(()=>{
+    hintEl.style.opacity = '0';
+    hintEl.textContent = '';
+  }, duration)
+}
