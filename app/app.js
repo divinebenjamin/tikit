@@ -12,8 +12,8 @@ const defaultUser = {
 
 function getUser(){
   try{
-    const stored = localStorage.getItem('user');
-    return stored ? JSON.parse(stored) : { ...defaultUser };
+    const storedUser = localStorage.getItem('user');
+    return storedUser ? JSON.parse(storedUser) : { ...defaultUser };
   } catch(error){
     console.error('Local storage', error);
     return { ...defaultUser };
@@ -26,6 +26,28 @@ const user = getUser();
 function saveUser(user){
   localStorage.setItem("user", JSON.stringify(user));
 }
+
+
+// Get list from DB
+const defaultList = [];
+
+function getList() {
+  try{
+    const storedList = localStorage.getItem('list');
+    return storedList ? JSON.parse(storedList) : [ ...defaultList ];
+  } catch(error){
+    console.error('Local storage', error);
+    return [ ...defaultList ];
+  }
+}
+
+const taskList = getList();
+
+// Save list to DB
+function saveList(list) {
+  localStorage.setItem('list', JSON.stringify(list));
+}
+
 
 // ELEMENTS
 const appEl = document.getElementById('app');
@@ -40,23 +62,7 @@ const hintEl = document.getElementById('authHint');
 const formEl = document.getElementById('addForm');
 const taskNameEl = document.getElementById('addName');
 
-
-const taskList = [
-  {taskName: "set up vscode", checked: false},
-  {taskName: "push to git", checked: false},
-  {taskName: "do choir", checked: false},
-  {taskName: "finish homework", checked: false},
-  {taskName: "check volume", checked: false},
-  {taskName: "organize business", checked: false},
-  {taskName: "brief team members", checked: false},
-  {taskName: "run ads", checked: false},
-  {taskName: "check competitors", checked: false},
-  {taskName: "partner with team leader", checked: false},
-  {taskName: "kjsbgjngkldnslf lkfdnm;g sldmv kns nl dsnkvnfmd kv dxnk vszfkv dbzv .knz dvnvlhkxv zfdm ndfx nkz nfv vn n zbnk dvm dknf znjkzv df kndfnxm nkldzfxcm", checked: false}
-];
-
 // REVERSE LIST TO MAKE RECENT TASK STAY AFLOAT
-taskList.reverse();
 
 // DISPLAY THE TASK SCREEN
 renderTask();
@@ -111,6 +117,7 @@ function renderList(){
 function removeTask(index){
   taskList.splice(index, 1);
   renderTask();
+  saveList(taskList);
 }
 
 // CHECK TASK AND INCREASE PROGRESS
@@ -119,11 +126,15 @@ function taskProgressUpdate(index){
     user.task += 1;
     taskList[index]['checked'] = true
     updateTask();
+    saveUser(user);
+    saveList(taskList);
     return user.task;
   } else {
     user.task -= 1;
     taskList[index]['checked'] = false
     updateTask();
+    saveUser(user);
+    saveList(taskList);
     return user.task;
   }
 
@@ -150,16 +161,15 @@ formEl.addEventListener('submit', (e) => {
     return;
   }
 
-  taskList.reverse();
-  taskList.push({
+  taskList.unshift({
     taskName,
     checked
   });
   
-  taskNameEl.value = '';  
   
-  taskList.reverse();
+  taskNameEl.value = '';
   renderTask();
+  saveList(taskList);
 })
 
 // show Hint function
@@ -174,6 +184,4 @@ function showHint(message, duration = 3000){
 }
 
 // TODO: add menu
-// TODO: add avatar selection
-// TODO: add storage
 // TODO: add responsiveness

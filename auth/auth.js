@@ -53,8 +53,8 @@ const defaultUser = {
 
 function getUser(){
   try{
-    const stored = localStorage.getItem('user');
-    return stored ? JSON.parse(stored) : { ...defaultUser };
+    const storedUser = localStorage.getItem('user');
+    return storedUser ? JSON.parse(storedUser) : { ...defaultUser };
   } catch(error){
     console.error('Local storage', error);
     return { ...defaultUser };
