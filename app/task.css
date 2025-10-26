@@ -6,7 +6,7 @@
 /* MAIN */
 .task__wrapper--list{
   display: grid;
-  grid-template-rows: 6% 18% auto 50px;
+  grid-template-rows: 6% minmax(100px, 16%) auto 40px;
   grid-gap: 1.5rem;
   width: 100%; height: 100%;
   position: relative;
@@ -105,7 +105,6 @@
 
 .item__label p{
   overflow-wrap: break-word;
-  word-break: break-all; 
   hyphens: auto;
 }
 
@@ -147,7 +146,7 @@ input[type="checkbox"]:checked ~ p{
 }
 
 .add__nav{
-  height: 40px; width: auto;
+  height: 100%; width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,7 +174,7 @@ input[type="checkbox"]:checked ~ p{
 
 .task__wrapper--add{
   display: grid;
-  grid-template-rows: 50px auto 50px;
+  grid-template-rows: 50px auto 40px;
   grid-gap: 1.5rem;
   width: 100%; height: 100%;
   position: relative;
@@ -255,13 +254,12 @@ input[type="checkbox"]:checked ~ p{
 
 .hint__text{
   transition: opacity 0.4s ease;
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 .task__wrapper--add .add__nav{
   border: none;
   background-color: var(--color-secondary-light);
   color: white;
-  height: 100%; 
   padding: 0 28px;
 }

@@ -6,7 +6,7 @@ const defaultUser = {
   password: null,
   registered: false,
   logged: false,
-  task: 1,
+  task: null,
   xp: null
 };
 
@@ -52,8 +52,7 @@ const taskList = [
   {taskName: "run ads", checked: false},
   {taskName: "check competitors", checked: false},
   {taskName: "partner with team leader", checked: false},
-  {taskName: "jdlfbskabgabfdsbdsabdbhbfhadbsvslckvbsbvdabfbdshbvalsdbkbdsvbasvdbsklvbashd", checked: false},
-  {taskName: "kjsbgjngkldnslf lkfdnm;g sldmv kns nl dsnkvnfmd kv dxnk vszfkv dbzv .knz dvnvlhkxv zfdm ndfx nkz nfv vn n zbnk dvm dknf znjkzv df kndfnxm nkldzfxcm", checked: true}
+  {taskName: "kjsbgjngkldnslf lkfdnm;g sldmv kns nl dsnkvnfmd kv dxnk vszfkv dbzv .knz dvnvlhkxv zfdm ndfx nkz nfv vn n zbnk dvm dknf znjkzv df kndfnxm nkldzfxcm", checked: false}
 ];
 
 // REVERSE LIST TO MAKE RECENT TASK STAY AFLOAT
@@ -173,3 +172,8 @@ function showHint(message, duration = 3000){
     hintEl.textContent = '';
   }, duration)
 }
+
+// TODO: add menu
+// TODO: add avatar selection
+// TODO: add storage
+// TODO: add responsiveness

@@ -47,8 +47,8 @@ const defaultUser = {
   password: null,
   registered: false,
   logged: false,
-  task: 0,
-  xp: 0
+  task: null,
+  xp: null
 };
 
 function getUser(){
