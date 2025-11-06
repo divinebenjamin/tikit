@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tikit - Simple. Fun. Yours</title>
+
+    <!-- ICON IMPORTS -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
+
+  <!-- CSS IMPORTS -->
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="menu.css">
+  
+  <!-- JS IMPORTS -->
+  <script src="../main.js" defer></script>
+  <script src="menu.js" defer></script>
+</head>
+<body>
+  <main id="app">
+
+    <div class="menu__wrapper">
+      <header class="menu__header">
+         <button id="menuBackBtn" class="back__button">
+          <i class="uil uil-angle-left"></i>
+        </button>
+        <h5 class="menu__title">Menu</h5>
+      </header>
+  
+      <section class="detail__wrapper">
+        <div class="profile__detail">
+          <div class="profile__img">
+            <img class="img" src="../assets/images/avatar.svg" alt="User avatar">
+          </div>
+          <div class="profile__text">
+            <p id="profileName" class="profile__name"></p>
+            <p id="profileMail" class="profile__mail"></p>
+          </div>
+        </div>
+  
+        <div class="status__detail">
+          <div class="status__icon ">
+            <img id="badgeIcon" class="img" src="" alt="status icon">
+          </div>
+          <div class="status__divider"></div>
+          <div class="status__taskXP">
+            <p id="statusTask" class="status__task"></p>
+            <p id="statusXp" class="status__xp"></p>
+          </div>
+        </div>
+  
+        <div class="milestone__wrapper">
+          <div class="milestone__detail">
+            <div class="level__milestone">
+              <div id="milestoneBadge" class="milestone__badge">
+                <img class="img" src="../assets/badges/starter.svg" alt="status icon">
+              </div>
+              <div class="milestone__desc">
+                <div class="milestone__title">starter</div>
+                <div class="milestone__range">0 - 99 xp</div>
+              </div>
+            </div>
+
+            <div class="level__milestone">
+              <div id="milestoneBadge" class="milestone__badge">
+                <img class="img" src="../assets/badges/doer.svg" alt="status icon">
+              </div>
+              <div class="milestone__desc">
+                <div class="milestone__title">doer</div>
+                <div class="milestone__range">100 - 299 xp</div>
+              </div>
+            </div>
+
+            <div class="level__milestone">
+              <div id="milestoneBadge" class="milestone__badge">
+                <img class="img" src="../assets/badges/archiever.svg" alt="status icon">
+              </div>
+              <div class="milestone__desc">
+                <div class="milestone__title">archiever</div>
+                <div class="milestone__range">300 - 699 xp</div>
+              </div>
+            </div>
+
+            <div class="level__milestone">
+              <div id="milestoneBadge" class="milestone__badge">
+                <img class="img" src="../assets/badges/planner.svg" alt="status icon">
+              </div>
+              <div class="milestone__desc">
+                <div class="milestone__title">planner</div>
+                <div class="milestone__range">700 - 1499 xp</div>
+              </div>
+            </div>
+
+            <div class="level__milestone">
+              <div id="milestoneBadge" class="milestone__badge">
+                <img class="img" src="../assets/badges/master.svg" alt="status icon">
+              </div>
+              <div class="milestone__desc">
+                <div class="milestone__title">master</div>
+                <div class="milestone__range">1500 - 2999 xp</div>
+              </div>
+            </div>
+
+            <div class="level__milestone">
+              <div id="milestoneBadge" class="milestone__badge">
+                <img class="img" src="../assets/badges/legend.svg" alt="status icon">
+              </div>
+              <div class="milestone__desc">
+                <div class="milestone__title">legend</div>
+                <div class="milestone__range">3000+ xp</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="menu__wrapper--list">
+        <a href="#" class="menu__item">
+          <div class="item__iconTitle">
+            <div class="item__icon image">
+              <img src="../assets/icons/avatar.svg" alt="menu icon">
+            </div>
+            <p class="item__title">avatar</p>
+            <p class="hint">Coming soon</p>
+          </div>
+          <div class="item__nav image">
+            <img src="../assets/icons/arrowRight.svg" alt="arrow right">
+          </div>
+        </a>
+
+        <a href="#" class="menu__item">
+          <div class="item__iconTitle">
+            <div class="item__icon image">
+              <img src="../assets/icons/idea.svg" alt="menu icon">
+            </div>
+            <p class="item__title">about</p>            
+            <p class="hint">Coming soon</p>
+          </div>
+          <div class="item__nav image">
+            <img src="../assets/icons/arrowRight.svg" alt="arrow right">
+          </div>
+        </a>
+
+        <button id="logoutBtn" class="menu__item">
+          <div class="item__iconTitle">
+            <div class="item__icon image">
+              <img src="../assets/icons/logout.svg" alt="menu icon">
+            </div>
+            <p class="item__title">Logout</p>
+          </div>
+        </button>
+      </section>
+    </div>
+
+  </main>
+  
+</body>
+</html>

@@ -155,7 +155,7 @@ function handleLogin(){
   window.location.assign('../app/app.html');
 }
 
-// login or signuo option toggle
+// login or signup option toggle
 function authOption(index){
   if(index === 'login'){
     currIndex = 1;

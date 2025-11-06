@@ -1,4 +1,3 @@
-
 // getuser from DB
 const defaultUser = {
   name: null,
@@ -53,6 +52,7 @@ function saveList(list) {
 const appEl = document.getElementById('app');
 const titleEl = document.getElementById('headerTitle');
 const taskEl = document.getElementById('headerTask');
+const avatarEl = document.getElementById('headerImg');
 const listEl = document.getElementById('listWrapper');
 const taskListEl = document.getElementById('taskWrapperList');
 const taskAddEl = document.getElementById('taskWrapperAdd');
@@ -62,12 +62,10 @@ const hintEl = document.getElementById('authHint');
 const formEl = document.getElementById('addForm');
 const taskNameEl = document.getElementById('addName');
 
-// REVERSE LIST TO MAKE RECENT TASK STAY AFLOAT
-
 // DISPLAY THE TASK SCREEN
 renderTask();
 
-
+// DISPLAY THE ADD SCREEN
 taskAddBtn.addEventListener('click', renderAdd);
 
 
@@ -126,6 +124,7 @@ function taskProgressUpdate(index){
     user.task += 1;
     taskList[index]['checked'] = true
     updateTask();
+    updateXP(4)
     saveUser(user);
     saveList(taskList);
     return user.task;
@@ -133,6 +132,7 @@ function taskProgressUpdate(index){
     user.task -= 1;
     taskList[index]['checked'] = false
     updateTask();
+    updateXP(-4)
     saveUser(user);
     saveList(taskList);
     return user.task;
@@ -144,6 +144,7 @@ function taskProgressUpdate(index){
 function renderAdd(){
   taskListEl.style.display = 'none';
   taskAddEl.style.display = 'grid';
+  taskNameEl.focus();
 }
 
 // BACK TO TASK FROM TASK
@@ -172,7 +173,7 @@ formEl.addEventListener('submit', (e) => {
   saveList(taskList);
 })
 
-// show Hint function
+// SHOW HINT
 function showHint(message, duration = 3000){
   hintEl.textContent = message;
   hintEl.style.opacity = '1';
@@ -183,5 +184,14 @@ function showHint(message, duration = 3000){
   }, duration)
 }
 
-// TODO: add menu
-// TODO: add responsiveness
+// XP CALCULATION
+function updateXP(num){
+  user.xp += num;
+}
+
+avatarEl.addEventListener('click', () => {
+  window.location.assign('../menu/menu.html');
+});
+
+// TODO: add menu screen
+// TODO: make the xp functional
